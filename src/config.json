@@ -1,7 +1,9 @@
 {
   "dataset": {
+    "multiplier": 1,
     "val": 0.1,
-    "input_shape": [28, 28, 1]
+    "input_shape": [28, 28, 1],
+    "num_classes": 10
   },
   "augment": {
     "rotation_range": 10,
@@ -9,8 +11,8 @@
     "width_shift_range": 0.1,
     "height_shift_range": 0.1
   },
-  "model_name": "cnn",
   "fit": {
+    "model_name": "cnn",
     "epochs": 50,
     "verbose": 1,
     "batch_size": 256,
