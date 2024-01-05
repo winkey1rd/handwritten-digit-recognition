@@ -2,6 +2,7 @@ import zipfile
 import os
 
 import numpy as np
+from tqdm import tqdm
 
 
 def load_data(zip_path: str, train_name: str, test_name: str):
@@ -13,8 +14,13 @@ def load_data(zip_path: str, train_name: str, test_name: str):
     :return: train, test numpy arrays
     """
     path = os.path.dirname(zip_path)
-    with zipfile.ZipFile(zip_path, "r") as zip_ref:
-        zip_ref.extractall()
+    with zipfile.ZipFile(zip_path, "r") as zf:
+        for member in tqdm(zf.infolist(), desc='Extracting '):
+            try:
+                zf.extract(member, path)
+            except zipfile.error as e:
+                pass
+
     train = np.loadtxt(f'{path}/{train_name}', skiprows=1, delimiter=',')
     test = np.loadtxt(f'{path}/{test_name}', skiprows=1, delimiter=',')
     return train, test
