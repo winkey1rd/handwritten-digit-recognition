@@ -1,0 +1,29 @@
+{
+  "dataset": {
+    "val": 0.1,
+    "input_shape": [28, 28, 1]
+  },
+  "augment": {
+    "rotation_range": 10,
+    "zoom_range": 0.1,
+    "width_shift_range": 0.1,
+    "height_shift_range": 0.1
+  },
+  "model_name": "unet",
+  "fit": {
+    "epochs": 50,
+    "verbose": 1,
+    "batch_size": 256,
+    "buffer_size": 100,
+    "seed": 123
+  },
+  "stopping": {"monitor": "val_loss", "mode":"min", "verbose": 1, "patience": 4,
+               "delta": 0, "baseline": null, "restore_best_weights": false},
+  "reduce_lr": {"monitor": "val_loss", "mode":"min", "verbose": 1,
+                  "patience": 2, "factor": 0.5, "min": 0.000001, "min_delta": 0.0001, "cooldown": 0},
+  "checkpoint": {"monitor": "val_loss", "mode": "auto", "verbose": 1, "save_best": false,
+                 "save_weights": false, "options": null, "save_freq": "epoch", "threshold": null, "period": 1},
+  "tensorboard": {"update_freq": "epoch", "hist_freq": 1, "embedding_freq": 0,
+                  "write_graf": true, "write_image": false, "steps_per_second": false, "profile_batch": 0}
+
+}
