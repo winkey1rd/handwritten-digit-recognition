@@ -24,3 +24,22 @@ def get_cnn_model(input_shape: tuple, out_shape: int):
     model.add(Dropout(0.5))
     model.add(Dense(out_shape, activation='softmax'))
     return model
+
+
+def compile_model(model_architecture, input_shape: tuple, n_classes: int, loss_func, optimizer, metrics: list):
+    """
+    compile model architecture
+    :param model_architecture: function creating model architecture
+    :param input_shape: size of input data (for example (400, 400))
+    :param n_classes: count of classes
+    :param loss_func: function for calculate loss
+    :param optimizer: model optimizer
+    :param metrics: list of metrics for train
+    :return: compiled model
+    """
+    model = model_architecture(input_shape=input_shape, out_shape=n_classes)
+    model.summary()
+    model.compile(optimizer=optimizer,
+                  loss=loss_func,
+                  metrics=metrics)
+    return model
