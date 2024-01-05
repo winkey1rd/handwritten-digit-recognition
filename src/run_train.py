@@ -20,7 +20,7 @@ def main():
     # create dataset
     input_shape = tuple(config[DATASET][INPUT])
     train, test = load_data(zip_file, train_file, test_file)
-    x_train = normalize_data(train[:, 1:], *input_shape)
+    x_train = normalize_data(train[:, 1:], input_shape)
     y_train = to_categorical(train[:, 0])
 
     x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=config[DATASET][VAL],

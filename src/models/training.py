@@ -21,13 +21,11 @@ def train_model(train_data: tuple, val_data: tuple, model, datagen, сheckpoint,
     :param tensorboard: the maximum num elements that will be buffered when prefetching
     :param fit_set: seed for random
     """
-    fit_config = (NAME, EPOCH, BATCH, VERBOSE, MULT)
+    fit_config = (NAME, EPOCH, BATCH, VERBOSE)
     fit_values = list()
     for i, conf in enumerate(fit_config):
         fit_values.append(fit_set[conf])
-    name, epochs, batch_size, verbose, multiplier = fit_values
-
-    train_steps = int(train_data[0].shape[0] * multiplier / batch_size)
+    name, epochs, batch_size, verbose = fit_values
 
     early_stopping = EarlyStopping(monitor=stopping[MONITOR],
                                    mode=stopping[MODE],
@@ -71,6 +69,8 @@ def train_model(train_data: tuple, val_data: tuple, model, datagen, сheckpoint,
                                  zoom_range=datagen[ZOOM],
                                  width_shift_range=datagen[X_SHIFT],
                                  height_shift_range=datagen[Y_SHIFT])
+    train_steps = int(train_data[0].shape[0] * datagen[MULT] / batch_size)
+
     model.fit(dataset.flow(*train_data, batch_size=batch_size),
               validation_data=val_data,
               epochs=epochs,

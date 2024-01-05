@@ -1,11 +1,11 @@
 {
   "dataset": {
-    "multiplier": 1,
     "val": 0.1,
     "input_shape": [28, 28, 1],
     "num_classes": 10
   },
   "augment": {
+    "multiplier": 1,
     "rotation_range": 10,
     "zoom_range": 0.1,
     "width_shift_range": 0.1,
