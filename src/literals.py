@@ -9,6 +9,8 @@ TENSORBOARD = "tensorboard"
 
 VAL = "val"
 INPUT = "input_shape"
+CLASSES = "num_classes"
+MULT = "multiplier"
 
 ROTATION = "rotation_range"
 ZOOM = "zoom_range"
