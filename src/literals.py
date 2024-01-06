@@ -7,6 +7,12 @@ REDUCE = "reduce_lr"
 CHECKPOINT = "checkpoint"
 TENSORBOARD = "tensorboard"
 
+SOFT = "software"
+WORKER = "worker_count"
+GPU = "gpu"
+GROWTH = "memory_growth"
+
+
 VAL = "val"
 INPUT = "input_shape"
 CLASSES = "num_classes"

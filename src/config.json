@@ -26,6 +26,11 @@
   "checkpoint": {"monitor": "val_loss", "mode": "auto", "verbose": 1, "save_best": false,
                  "save_weights": false, "options": null, "save_freq": "epoch", "threshold": null, "period": 1},
   "tensorboard": {"update_freq": "epoch", "hist_freq": 1, "embedding_freq": 0,
-                  "write_graf": true, "write_image": false, "steps_per_second": false, "profile_batch": 0}
+                  "write_graf": true, "write_image": false, "steps_per_second": false, "profile_batch": 0},
+  "software": {
+    "gpu": [0],
+    "memory_growth":true,
+    "worker_count": 4
+  }
 
 }

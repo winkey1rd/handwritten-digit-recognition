@@ -2,7 +2,7 @@ import os.path
 from datetime import datetime
 
 from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau
-from keras_preprocessing.image import ImageDataGenerator
+from keras.preprocessing.image import ImageDataGenerator
 
 from literals import *
 
