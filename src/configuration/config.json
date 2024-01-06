@@ -2,7 +2,8 @@
   "data": {
     "zip_file": "../data/digit-recognizer.zip",
     "train_file": "../data/train.csv",
-    "test_file": "../data/test.csv"
+    "test_file": "../data/test.csv",
+    "out_file": "../data/submission.csv"
   },
   "dataset": {
     "val": 0.1,

@@ -16,9 +16,7 @@ with open('configuration/config.json') as config_file:
 
 
 def main():
-    zip_file = "../data/digit-recognizer.zip"
-    train_file = "../data/train.csv"
-
+    zip_file, train_file = [config[DATA][i] for i in (ZIP, TRAIN)]
     # create dataset
     input_shape = tuple(config[DATASET][INPUT])
     if not os.path.exists(train_file):

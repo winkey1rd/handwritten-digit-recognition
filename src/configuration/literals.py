@@ -1,3 +1,4 @@
+DATA = "data"
 DATASET = "dataset"
 AUGMENT = "augment"
 NAME = "model_name"
@@ -12,6 +13,10 @@ WORKER = "worker_count"
 GPU = "gpu"
 GROWTH = "memory_growth"
 
+ZIP = "zip_file"
+TRAIN = "train_file"
+TEST = "test_file"
+OUT = "out_file"
 
 VAL = "val"
 INPUT = "input_shape"
