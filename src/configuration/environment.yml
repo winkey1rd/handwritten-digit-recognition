@@ -1,0 +1,20 @@
+#name: directml
+#channels:
+#  - defaults
+#dependencies:
+#  - python=3.7
+#  - scikit-learn
+#  - pip:
+#      - tensorflow-cpu==2.10.0
+#      - tensorflow-directml-plugin
+
+
+name: cuda
+channels:
+  - defaults
+dependencies:
+  - python
+  - scikit-learn
+  - tensorflow     #   - tensorflow=2.10.0 for windows
+  - cudnn
+  - cudatoolkit
