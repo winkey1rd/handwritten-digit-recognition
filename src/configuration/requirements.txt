@@ -1,0 +1,13 @@
+# python==3.7
+scikit-learn
+tensorflow-cpu==2.10.0
+tensorflow-directml-plugin
+
+
+############
+#   CUDA   #
+############
+
+# # python==3.11
+# scikit-learn
+# tensorflow

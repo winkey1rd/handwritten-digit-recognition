@@ -1,0 +1,57 @@
+DATASET = "dataset"
+AUGMENT = "augment"
+NAME = "model_name"
+FIT = "fit"
+STOPPING = "stopping"
+REDUCE = "reduce_lr"
+CHECKPOINT = "checkpoint"
+TENSORBOARD = "tensorboard"
+
+SOFT = "software"
+WORKER = "worker_count"
+GPU = "gpu"
+GROWTH = "memory_growth"
+
+
+VAL = "val"
+INPUT = "input_shape"
+CLASSES = "num_classes"
+MULT = "multiplier"
+
+ROTATION = "rotation_range"
+ZOOM = "zoom_range"
+X_SHIFT = "width_shift_range"
+Y_SHIFT = "height_shift_range"
+
+EPOCH = "epochs"
+VERBOSE = "verbose"
+BATCH = "batch_size"
+SEED = "seed"
+
+MONITOR = "monitor"
+MODE = "mode"
+PATIENCE = "patience"
+
+DELTA = "delta"
+BASELINE = "baseline"
+B_WEIGHTS = "restore_best_weights"
+
+FACTOR = "factor"
+MIN = "min"
+M_DELTA = "min_delta"
+COOLDOWN = "cooldown"
+
+BEST = "save_best"
+S_WEIGHTS = "save_weights"
+OPTIONS = "options"
+S_FREQ = "save_freq"
+THRESHOLD = "threshold"
+PERIOD = "period"
+
+U_FREQ = "update_freq"
+H_FREQ = "hist_freq"
+E_FREQ = "embedding_freq"
+WRITE_G = "write_graf"
+WRITE_I = "write_image"
+STEPS = "steps_per_second"
+P_BATCH = "profile_batch"
