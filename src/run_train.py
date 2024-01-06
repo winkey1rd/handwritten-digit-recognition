@@ -32,8 +32,10 @@ def main():
         return
 
     try:
+        print(f'Load dataset')
         x_train = normalize_data(train[:, 1:], input_shape)
         y_train = to_categorical(train[:, 0])
+        print(f'Split dataset')
         x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=config[DATASET][VAL],
                                                           random_state=config[FIT][SEED])
     except Exception as e:
@@ -41,6 +43,7 @@ def main():
         return
 
     try:
+        print(f'Creating model')
         comp_params = (LOSS, OPTIMIZER, METRICS)
         model = compile_model(get_cnn_model, input_shape, config[DATASET][CLASSES],
                               *[config[FIT][i] for i in comp_params])

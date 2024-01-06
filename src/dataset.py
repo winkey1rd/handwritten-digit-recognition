@@ -1,7 +1,6 @@
 import zipfile
 import os
 
-import numpy as np
 from tqdm import tqdm
 
 
@@ -11,6 +10,7 @@ def unzip_data(zip_path: str):
     :param zip_path: path to zip
     :return: train, test numpy arrays
     """
+    print(f'Start unzip file {zip_path}')
     path = os.path.dirname(zip_path)
     with zipfile.ZipFile(zip_path, "r") as zf:
         for member in tqdm(zf.infolist(), desc='Extracting '):
@@ -18,6 +18,7 @@ def unzip_data(zip_path: str):
                 zf.extract(member, path)
             except zipfile.error as e:
                 pass
+    print(f'Finished unzip file {zip_path}')
 
 
 def normalize_data(x, input_shape):
