@@ -1,4 +1,3 @@
-import os.path
 from datetime import datetime
 
 from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau
