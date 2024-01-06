@@ -5,12 +5,10 @@ import numpy as np
 from tqdm import tqdm
 
 
-def load_data(zip_path: str, train_name: str, test_name: str):
+def unzip_data(zip_path: str):
     """
     func get train and test data from zip
     :param zip_path: path to zip
-    :param train_name: filename in zip with train data
-    :param test_name: filename in zip with test data
     :return: train, test numpy arrays
     """
     path = os.path.dirname(zip_path)
@@ -20,10 +18,6 @@ def load_data(zip_path: str, train_name: str, test_name: str):
                 zf.extract(member, path)
             except zipfile.error as e:
                 pass
-
-    train = np.loadtxt(f'{path}/{train_name}', skiprows=1, delimiter=',')
-    test = np.loadtxt(f'{path}/{test_name}', skiprows=1, delimiter=',')
-    return train, test
 
 
 def normalize_data(x, input_shape):
