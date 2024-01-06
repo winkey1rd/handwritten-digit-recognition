@@ -6,12 +6,12 @@ from sklearn.model_selection import train_test_split
 from tensorflow import config as tensorflow_config
 
 
-from literals import *
+from configuration.literals import *
 from models.architecture import compile_model, get_cnn_model
 from dataset import load_data, normalize_data
 from models.training import train_model
 
-with open('config.json') as config_file:
+with open('configuration/config.json') as config_file:
     config = json.load(config_file)
 
 

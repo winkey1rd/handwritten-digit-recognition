@@ -4,7 +4,7 @@ from datetime import datetime
 from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau
 from keras.preprocessing.image import ImageDataGenerator
 
-from literals import *
+from configuration.literals import *
 
 
 def train_model(train_data: tuple, val_data: tuple, model, datagen, сheckpoint, reduce_lr, stopping, tensorboard,
