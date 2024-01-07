@@ -1,4 +1,3 @@
-import os.path
 from datetime import datetime
 
 from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard, ReduceLROnPlateau
@@ -35,7 +34,8 @@ def train_model(train_data: tuple, val_data: tuple, model, datagen, сheckpoint,
                                    baseline=stopping[BASELINE],
                                    restore_best_weights=stopping[B_WEIGHTS])
 
-    check = ModelCheckpoint(name,
+    model_info = '' if сheckpoint[BEST] else f'-{{epoch}}'
+    check = ModelCheckpoint(f'models/{name}-{datetime.now().strftime("%Y%m%d")}{model_info}',
                             monitor=сheckpoint[MONITOR],
                             mode=сheckpoint[MODE],
                             verbose=сheckpoint[VERBOSE],
@@ -46,7 +46,7 @@ def train_model(train_data: tuple, val_data: tuple, model, datagen, сheckpoint,
                             save_weights_only=сheckpoint[S_WEIGHTS],
                             options=сheckpoint[OPTIONS])
 
-    log_dir = f"{os.path.dirname(name)}/logs/fit/" + datetime.now().strftime("%Y%m%d-%H%M%S")
+    log_dir = f"models/logs/fit/" + datetime.now().strftime("%Y%m%d-%H%M%S")
     tensorboard = TensorBoard(log_dir=log_dir,
                               update_freq=tensorboard[U_FREQ],
                               histogram_freq=tensorboard[H_FREQ],
